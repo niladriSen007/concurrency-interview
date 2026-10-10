@@ -16,7 +16,7 @@ class NewResource {
             System.out.println(Thread.currentThread().getName() + " reads value as " + value);
         } catch (Exception e) {
         } finally {
-            lock.unlock(timestamp);
+            lock.unlockRead(timestamp);
         }
     }
 
@@ -29,7 +29,7 @@ class NewResource {
             System.out.println(Thread.currentThread().getName() + " writes value as " + value);
         } catch (Exception e) {
         } finally {
-            lock.unlock(timestamp);
+            lock.unlockWrite(timestamp);
         }
     }
 
